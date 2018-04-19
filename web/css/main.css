@@ -1,0 +1,559 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ececec !important;
+}
+
+.logo {
+	margin-left: calc(50% - 50px);
+	width: 100px;
+	margin-top: 10px;
+}
+
+.eye-open {
+	position: relative;
+	right: -88%;
+	top: -30px;
+	cursor: pointer;
+}
+
+.main {
+	width: 60%;
+	background: #f7f7f7;
+	border-radius: 2px;
+	padding: 5px 20px;
+	margin: 0 auto;
+	margin-top: 10px;
+	height: 550px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+h1 {
+	color: #444;
+	text-align: center;
+}
+
+.success {
+	position: fixed;
+	top: calc(50% - 100px);
+	left: calc(50% - 150px);
+	border: 1px solid lightgreen;
+	text-align: center;
+	width: 300px;
+	line-height: 100px;
+	background: rgba(0, 178, 0, 0.8);
+	z-index: 2;
+	font-size: 18px;
+	display: none;
+}
+
+.form *:not(.submit):not(.eye-open):not(.glyphicon):not(.user_image) {
+	display: block;
+	margin-top: 20px;
+	width: calc(100% - 20px);
+	background: #f7f7f7;
+	border: 0;
+	font-size: 16px;
+	padding: 10px;
+	border-bottom: 1px solid #d75469;
+	transition: padding 0.3s;
+}
+
+.form .user_image {
+	padding-top: 40px;
+}
+
+.form .user_about {
+	resize: vertical;
+	height: 150px;
+}
+
+.form *:not(.submit):not(.eye-open):not(.glyphicon):not(.user_image):focus {
+	border-bottom: 1px solid #78a9d6;
+	padding: 20px;
+}
+
+.form {
+	position: relative;
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.form .submit {
+	background: #d75469;
+	border: 0;
+	margin-top: 30px;
+	width: 100%;
+	color: white;
+	padding: 10px 0;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+input:focus, textarea:focus {
+	outline: none;
+}
+
+.menu {
+	font-size: 15px;
+}
+
+.menu ul {
+	list-style-type: none;
+	text-align: left;
+}
+
+.menu ul li {
+	display: inline-block;
+	margin-left: 35px;
+}
+
+.menu ul .search {
+	margin-left: 55px;
+}
+
+.menu ul .search input {
+	transition: 0.3s all;
+	border: none;
+	border-bottom: 1px solid #444;
+	background: #ececec;
+	padding-bottom: 3px;
+}
+
+.menu ul .search input:focus {
+	border-bottom: 1px solid #d75469;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+
+.menu ul .search span {
+	cursor: pointer;
+}
+
+.content {
+	margin-top: 40px;
+}
+
+.post {
+	width: 90%;
+	margin: 0 auto;
+	background: #f7f7f7;
+	padding: 10px 15px;
+	margin-bottom: 15px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+	border-radius: 4px;
+}
+
+.post:hover {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.3);
+}
+
+.preview {
+	font-size: 17px;
+	line-height: 1.2em;
+	margin-bottom: 10px;
+}
+
+.read {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.read a {
+	color: #d75469 !important;
+	border: 1px solid #d75469;
+	padding: 7px 10px;
+	border-radius: 4px;
+}
+
+.read a:hover {
+	text-decoration: none;
+}
+
+.stats {
+	margin: 10px 0;
+}
+
+.date {
+	margin-left: -10px !important;
+}
+
+.stats * {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+p {
+	font-size: 17px;
+	line-height: 1.2em;
+}
+
+.social-buttons {
+	text-align: center;
+}
+
+.topics {
+	position: fixed;
+	width: 100%;
+	background: #444;
+	bottom: 0;
+	margin-left: -20px;
+	padding: 10px;
+	color: white;
+	padding-left: 10px;
+	z-index: 9999;
+}
+
+.topics .item {
+	margin-left: 10px;
+	border: 1px solid white;
+	padding: 3px 6px;
+	border-radius: 4px;
+}
+
+.clear {
+	clear: both;
+}
+
+a {
+	color: #444 !important;
+}
+
+.post-one {
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+	padding: 10px 20px;
+	background: #f7f7f7;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 40px;
+	border-radius: 4px;
+}
+
+.post-one h1 {
+	margin: 15px 0 25px 0;
+}
+
+.image {
+	width: calc(100% + 40px);
+	margin-left: -20px;
+}
+
+.image img {
+	width: 100%;
+	padding: 20px 0;
+}
+
+.tag {
+	border-radius: 4px;
+	color: #78a9d6 !important;
+	display: inline-block;
+	min-width: 70px;
+	text-align: center;
+	padding: 4px 0;
+	margin-right: 7px;
+	border: 1px solid #78a9d6;
+	background: #f3f3f3;
+}
+
+.tag:hover {
+	text-decoration: none;
+	background: #78a9d6;
+	color: white !important; 
+}
+
+.card {
+	min-height: 250px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+	transition: box-shadow 0.28s cubic-bezier(0.4,0,0.2,1);
+	background: #f7f7f7;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+.card:hover {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.3);
+}
+
+.card .image {
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 20px;
+}
+
+.card .name {
+	padding-top: 7px;
+	color: #444;
+}
+
+.card .describe {
+	margin: 8px 10px 5px 10px;
+	color: #444;
+	font-size: 14px;
+	line-height: 1.1em;
+}
+
+.card .follow {
+	display: block;
+	margin-top: 20px;
+	border-top: 1px solid #78a9d6;
+	text-align: center;
+	width: 100%;
+	padding: 5px 0;
+	color: #78a9d6 !important;
+	border-radius: 0 0 4px 4px;
+}
+
+.card .follow:hover {
+	text-decoration: none;
+	color: white !important;
+	background: #78a9d6;
+}
+
+.category-block {
+	background: #e1e1e1;
+	margin-bottom: 20px;
+}
+
+.category-block .image {
+	width: 100%;
+	padding-left: 20px;
+}
+
+.category-icon {
+	background: url(http://icons.veryicon.com/png/System/Kameleon/Programming.png); 
+	background-position: center center;
+	background-size: contain;
+	margin-bottom: -8px;
+	width: 30px;
+	height: 30px;
+	border-radius: 100px;
+}
+
+.user-icon {
+	background: url(http://vie.blog/web/images/author.jpg); 
+	background-position: center center;
+	background-size: contain;
+	margin-bottom: -8px;
+	width: 30px;
+	height: 30px;
+	border-radius: 100px;
+}
+
+/* ------- Experiment! ----------- */
+
+.row * {
+	/*border: 1px solid red;*/
+}
+
+
+
+
+.photo {
+	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
+	background-size: cover;
+	width: 100%;
+	height: 50%;
+	margin: 0 auto;
+	border-radius: 200px;
+	margin-top: 20px;
+}
+
+.photo-small {
+	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
+	background-size: cover;
+	width: 110px;
+	height: 110px;
+	border-radius: 200px;
+	/*margin-top: 10px;*/
+	margin: 0 auto;
+}
+
+
+.right {
+	padding: 20px;
+	padding-left: 0;
+}
+
+.left {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	/*height: 1000px;*/
+	/*background: #e8e8e8;*/
+	background: #dcdce5;
+	width: 30%; 
+	/*background: linear-gradient(to right, rgba(120, 169, 214, 0.5), rgba(215, 84, 105, 0.5));*/
+	float: left;
+	padding: 0 20px;
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-mobile {
+	display: none;
+}
+
+@media screen and (max-width: 767px) {
+	.right {
+		margin-left: 0px !important;
+	}
+
+	.welcome-mobile .photo-small {
+		width: 150px;
+		height: 150px;
+	}
+
+	.welcome-mobile h3 {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	.welcome-mobile .text {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.left {
+		display: none;
+	}
+
+	.category-block .image {
+		/*width: 20%;*/
+	}
+
+	.card .image {
+		width: 26%;
+		margin-left: 37%;
+	}
+
+	.card {
+		margin-left: 10px;
+	}
+
+	.card .describe {
+		text-align: center;
+	}
+
+	.right {
+		margin-left: 8%;
+	}
+
+	.menu ul li {
+		display: inline-block;
+		margin-left: 6%;
+	}
+
+	.menu ul .search {
+		margin-left: 50px;
+	}
+
+	.menu ul .search input {
+		display: none;
+	}
+
+	.welcome-mobile {
+		display: block;
+	}
+
+}
+
+
+/* ===== User page styles ===== */
+
+.user-page {
+	width: 100%;
+	position: relative;
+}
+
+.user-page .top {
+	position: relative;
+	height: 350px;
+	background: #343d46;
+	box-shadow: 0px 1px 12px 6px rgba(101, 115, 126, .9);
+}
+
+.user-page .top .info {
+	color: white;
+	border-top: 5px solid #4f5b66;
+	position: absolute;
+	width: 40%;
+	margin: 0 auto;
+	bottom: 0;
+	left: 30%;
+	height: 320px;
+	background: #65737e;
+}
+
+.user-page .top .info .image {
+	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
+	background-size: cover;
+	width: 150px;
+	height: 150px;
+	border-radius: 200px;
+	/*margin-top: 10px;*/
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.user-page .top .info .name {
+	color: white;
+	margin-top: -6px;
+}
+
+.user-page .top .info .about {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.user-page .top .info .about p {
+	font-size: 15px;
+	line-height: 1.3em;
+}
+
+.user-page .bottom {
+	position: relative;
+	min-height: 400px;
+	width: 100%;
+}
+
+.bottom .hr {
+	position: absolute;
+	width: 20%;
+	left: 40%;
+	z-index: 9999;
+	height: 1px;
+	background: #c0c5ce;
+	margin-top: -15px;
+}
+
+.bottom .posts {
+	position: absolute;
+	top: 0;
+	min-height: 300px;
+	width: 40%;
+	left: 30%;
+	background: #65737e;
+	border-bottom: 5px solid #4f5b66;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+} 
+
+.bottom .posts .one {
+	color: white;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 2px 5px;
+}
+
+.bottom .posts .one .title {
+	color: white !important;
+	font-size: 17px;
+	text-align: center;
+}
