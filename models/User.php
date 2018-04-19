@@ -16,10 +16,7 @@ class User extends Model
 	{
 		if (!$email) return false;
 		
-		$user = $this->db->prepare("SELECT * FROM user WHERE email = :email");
-		$user->execute([':email' => $email]);	
-	
-		$data = $user->fetch();
+		$data = $this->getUser(['key' => 'email', 'value' => $email]);
 
 		return $data ?? false; 
 	}
@@ -28,10 +25,7 @@ class User extends Model
 	{
 		if (!$authKey) return false;
 
-		$user = $this->db->prepare("SELECT * FROM user WHERE auth_key = :key");
-		$user->execute([':key' => $authKey]);
-
-		$data = $user->fetch();
+		$data = $this->getUser(['key' => 'auth_key', 'value' => $authKey]);
 
 		return $data ?? false;
 	}
@@ -40,10 +34,7 @@ class User extends Model
 	{
 		if (!$authKey) return false;
 
-		$user = $this->db->prepare("SELECT id FROM user WHERE auth_key = :key");
-		$user->execute([':key' => $authKey]);
-
-		$data = $user->fetch();
+		$data = $this->getUser(['key' => 'auth_key', 'value' => $authKey]);
 
 		if ($data)
 			return $data['id'];

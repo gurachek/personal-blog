@@ -7,8 +7,8 @@ $app->group('/api', function () use ($app) {
 	$app->group('/v1', function () use ($app) {
 	
 		$app->get('/post', function (Request $request, Response $response, array $args) {
-			
-			$post = $this->db->query("SELECT * FROM post ORDER BY created");
+
+			$post = $this->db->query("SELECT * FROM post");
 
 			$i = 0;
 

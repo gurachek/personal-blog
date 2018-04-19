@@ -5,6 +5,7 @@
 		if (@$title) $title .= ' | G.'; else $title = "G."; 
 	?>
 	<title><?= $title ?></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="http://vie.blog/web/css/main.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,11 +14,11 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4 col-sm-0" style="padding: 0">
+		<div class="col-md-3 col-sm-0" style="padding: 0">
 			<div class="left">
 			<h1>
-				<span style="color: white; background: #d75469; padding: 5px 10px;">Valera </span>
-				<span style="color: white; background: #78a9d6; padding-left: 5px;">Gurachek</span>
+				<span class="my-name">Valera </span>
+				<span class="my-surname">Gurachek</span>
 			</h1>
 			<div class="photo"></div>
 			<p style="margin: 40px 30px;">Веду блог от нечего делать. Занимаюсь проектом <a href="http://theviebook.com/" target="_blank" style="text-decoration: underline;">theviebook.com</a></p>
@@ -29,7 +30,7 @@
 			</div>
 			</div>
 		</div>
-		<div class="col-md-8 col-sm-10 col-xs-12 right" style="padding-left: 0">
+		<div class="col-md-9 col-sm-10 col-xs-12 right" style="padding-left: 0">
 
 			<div class="topics" style="display: none;">
 				Популярные теги: 
@@ -52,7 +53,17 @@
 						<li><a href="/signin">Вход</a></li>
 						<li><a href="/signup">Регистрация</a></li>
 					
+						<li class="search">
+							<input type="search" name="search" placeholder="Search here.."> 
+							<span class="glyphicon glyphicon-search"></span>
+						</li>
+
 					<?php else: ?>
+
+						<li class="search">
+							<input type="search" name="search" placeholder="Search here.."> 
+							<span class="glyphicon glyphicon-search"></span>
+						</li>
 
 						<li><div style="background: url(/web/images/users/<?= $c->user['image'] ?>) no-repeat; width: 30px; height: 30px; margin-bottom: -10px; margin-right: -20px; border-radius: 100px; background-size: cover; background-position: center center;"></div></li>
 						<li>
@@ -60,14 +71,8 @@
 							<a class="logout" title="Выйти из аккаунта" style="color: gray; font-size: 13px; margin-left: 4px; cursor: pointer;"><span class="glyphicon glyphicon-log-out"></span></a>
 						</li>
 
-						
-
 					<?php endif; ?>
 					
-					<li class="search">
-					<input type="search" name="search" placeholder="Search here.."> 
-					<span class="glyphicon glyphicon-search"></span>
-					</li>
 				</ul>
 			</div>
 

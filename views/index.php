@@ -1,9 +1,19 @@
 <div class="content">
-	<?php foreach($data as $post) : ?>
 
-		<?php if (!$post['active']) continue; ?>
+	<?php if (!@$data): ?>
 
-		<?php include 'parts/post.php' ?>
+		<h1 style="margin-top: 80px; color: #444;">В блоге все еще нет постов.</h1>
 
-	<?php endforeach; ?>
+	<?php else: ?>
+
+		<?php foreach($data as $post) : ?>
+
+			<?php if (!$post['active']) continue; ?>
+
+			<?php include 'parts/post.php' ?>
+
+		<?php endforeach; ?>
+	
+	<?php endif; ?>
+
 </div>

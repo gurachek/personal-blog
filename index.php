@@ -33,6 +33,7 @@ $container = [
 		try {
 			$db = new PDO('mysql:dbname=gurachek-blog;host=127.0.0.1', 'root', '');
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$db->exec("SET NAMES utf8 COLLATE utf8_unicode_ci");
 		} catch(Exception $e) {
 			return $e->getMessage();
 		} 
@@ -83,7 +84,7 @@ include('api/post_tag.php');
 
 $app->get('/', function (Request $request, Response $response, array $args) use ($container) {
 
-	$data = json_decode(file_get_contents('http://vie.blog/api/v1/post'), true);
+	$data = json_decode(@file_get_contents('http://vie.blog/api/v1/post'), true);
 
 	return $this->renderer->render($response, $container['template'], [
 		'content' => 'index',
@@ -96,7 +97,7 @@ $app->get('/', function (Request $request, Response $response, array $args) use 
 $app->get('/post/{id}', function (Request $request, Response $response, array $args) use ($container) {
 
 	// Example of usage api (fetching singular post data)
-	$data = json_decode(file_get_contents('http://vie.blog/api/v1/post/'.$args['id']), true);
+	$data = json_decode(@file_get_contents('http://vie.blog/api/v1/post/'.$args['id']), true);
 
 	return $this->renderer->render($response, $container['template'], [
 		'content' => 'post',
@@ -112,6 +113,9 @@ $app->get('/signup', function (Request $request, Response $response, array $args
 
 	$title = 'Регистрация';
 
+	if ($container->user)
+		return $response->withRedirect($container->url);
+
 	return $this->renderer->render($response, '/signup.php', [
 		'title' => $title,
 		'c' => $container,
@@ -122,6 +126,9 @@ $app->get('/signup', function (Request $request, Response $response, array $args
 $app->get('/signin', function (Request $request, Response $response, array $args) use ($container) {
 
 	$title = 'Авторизация';
+
+	if ($container->user)
+		return $response->withRedirect($container->url);
 
 	return $this->renderer->render($response, '/signin.php', [
 		'title' => $title,
@@ -181,7 +188,7 @@ $app->get('/categories', function (Request $request, Response $response, array $
 
 	$title = "Категории";
 
-	$data = json_decode(file_get_contents('http://vie.blog/api/v1/category'), true);
+	$data = json_decode(@file_get_contents('http://vie.blog/api/v1/category'), true);
 
 	return $this->renderer->render($response, $container['template'], [
 		'content' => 'categories',
@@ -194,11 +201,11 @@ $app->get('/categories', function (Request $request, Response $response, array $
 
 $app->get('/category/{id}', function (Request $request, Response $response, array $args) use ($container) {
 
-	$data = json_decode(file_get_contents('http://vie.blog/api/v1/category/'. $args['id']), true); 
+	$data = json_decode(@file_get_contents('http://vie.blog/api/v1/category/'. $args['id']), true); 
 
 	$title = $data['name'];
 
-	$posts = json_decode(file_get_contents('http://vie.blog/api/v1/posts/category/'. $data['id']), true);
+	$posts = json_decode(@file_get_contents('http://vie.blog/api/v1/posts/category/'. $data['id']), true);
 
 	return $this->renderer->render($response, $container['template'], [
 		'content' => 'category',
@@ -212,11 +219,11 @@ $app->get('/category/{id}', function (Request $request, Response $response, arra
 
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) use ($container) {
 
-	$data = json_decode(file_get_contents('http://vie.blog/api/v1/user/'. $args['id']), true); 
+	$data = json_decode(@file_get_contents('http://vie.blog/api/v1/user/'. $args['id']), true); 
 
 	$title = $data['name'];
 
-	$posts = json_decode(file_get_contents('http://vie.blog/api/v1/posts/user/'. $data['id']), true);
+	$posts = json_decode(@file_get_contents('http://vie.blog/api/v1/posts/user/'. $data['id']), true);
 
 	return $this->renderer->render($response, '/user.php', [
 		'data' => $data,
@@ -231,7 +238,7 @@ $app->get('/tag/{id}', function (Request $request, Response $response, array $ar
 
 	$id = (int) $args['id'];
 
-	$posts = json_decode(file_get_contents('http://vie.blog/api/v1/tag/'. $id .'/posts'), true);
+	$posts = json_decode(@file_get_contents('http://vie.blog/api/v1/tag/'. $id .'/posts'), true);
 
 	$tag = $posts['tag'];
 	unset($posts['tag']);

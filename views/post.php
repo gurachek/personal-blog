@@ -1,3 +1,12 @@
+<?php if (!$data): ?>
+
+<br>
+<br>
+<br>
+<h1 style="color: #444;">Такого поста не существует.</h1>
+
+<?php else: ?>
+
 <div class="post-one">
 	
 	<div class="stats">
@@ -37,14 +46,14 @@
 	<?php if ($data['image']) : ?>
 
 		<div class="image">
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaOR4wCDNRvnE6Rd8aAnXDX3WX_WGx7vAPwwgksCZzx23DoNba7g">
+			<img src="/web/images/posts/<?= $data['image'] ?>">
 		</div>
-
-		<?php // 'images/posts/'. $data['image'] .'  ?>
 		
 	<?php endif; ?>
 
-	<p>
+	<p class="post-text">
 		<?= $data['text'] ?>
 	</p>
 </div>
+
+<?php endif; ?>

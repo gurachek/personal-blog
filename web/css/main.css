@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #ececec !important;
+	color: #444;
 }
 
 .logo {
@@ -117,7 +118,7 @@ input:focus, textarea:focus {
 	transition: 0.3s all;
 	border: none;
 	border-bottom: 1px solid #444;
-	background: #ececec;
+	background: transparent;
 	padding-bottom: 3px;
 }
 
@@ -233,6 +234,11 @@ a {
 
 .post-one h1 {
 	margin: 15px 0 25px 0;
+}
+
+.post-one .post-text {
+	font-size: 17px;
+	line-height: 1.6em;
 }
 
 .image {
@@ -354,7 +360,7 @@ a {
 	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
 	background-size: cover;
 	width: 100%;
-	height: 50%;
+	height: 41%;
 	margin: 0 auto;
 	border-radius: 200px;
 	margin-top: 20px;
@@ -384,11 +390,11 @@ a {
 	/*height: 1000px;*/
 	/*background: #e8e8e8;*/
 	background: #dcdce5;
-	width: 30%; 
+	width: 25%; 
 	/*background: linear-gradient(to right, rgba(120, 169, 214, 0.5), rgba(215, 84, 105, 0.5));*/
 	float: left;
 	padding: 0 20px;
-	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-mobile {
@@ -489,14 +495,7 @@ a {
 }
 
 .user-page .top .info .image {
-	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
-	background-size: cover;
-	width: 150px;
-	height: 150px;
-	border-radius: 200px;
-	/*margin-top: 10px;*/
-	margin: 0 auto;
-	margin-top: 20px;
+	
 }
 
 .user-page .top .info .name {
@@ -557,3 +556,43 @@ a {
 	font-size: 17px;
 	text-align: center;
 }
+
+.my-name {
+	color: white;
+	background: #d75469;
+	padding: 5px 10px;
+}
+
+.my-surname {
+	color: white;
+	background: #78a9d6;
+	padding-left: 5px;
+}
+
+/* ========== Site colors experiment ========== */
+
+/*.left {
+	background: #65737e;
+	box-shadow: 0px 0px 1px 2px rgba(79, 91, 102, 1);
+	color: white !important;
+}
+
+.left a {
+	color: white !important;
+}
+
+body {
+	background: rgba(192, 197, 206, 0.4) !important;
+}
+
+.my-name {
+	color: white;
+	background: #d75469;
+	padding: 5px 10px;
+}
+
+.my-surname {
+	color: white;
+	background: #343d46;
+	padding-left: 5px;
+}*/
