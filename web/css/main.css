@@ -338,7 +338,7 @@ a {
 }
 
 .user-icon {
-	background: url(http://vie.blog/web/images/author.jpg); 
+	background: url(http://localhost:8000/web/images/author.jpg); 
 	background-position: center center;
 	background-size: contain;
 	margin-bottom: -8px;
@@ -357,9 +357,9 @@ a {
 
 
 .photo {
-	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
+	background: url('http://localhost:8000/web/images/author.jpg') no-repeat center;
 	background-size: cover;
-	width: 100%;
+	width: 90%;
 	height: 41%;
 	margin: 0 auto;
 	border-radius: 200px;
@@ -367,7 +367,7 @@ a {
 }
 
 .photo-small {
-	background: url('http://vie.blog/web/images/author.jpg') no-repeat center;
+	background: url('http://localhost:8000/web/images/author.jpg') no-repeat center;
 	background-size: cover;
 	width: 110px;
 	height: 110px;

@@ -63,4 +63,13 @@
 
 	    return $filename;
 	}
-?>
+
+	function autoloader($className) {
+
+		$array = explode("\\", $className);
+
+		if ($array[1] != "PDO")
+			require_once __DIR__ . '/' . $array[0] . '/' . $array[1] . '.php' ;
+		else
+			return false;
+	}
